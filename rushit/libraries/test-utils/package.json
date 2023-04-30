@@ -1,0 +1,30 @@
+{
+  "name": "@jimp/test-utils",
+  "version": "1.0.0",
+  "description": "Test utils for jimp extensions.",
+  "main": "dist/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "test": "mocha --require=ts-node/register",
+    "build": "rimraf ./es ./dist && npm run build:cjs && npm run build:esm",
+    "build:esm": "tsc --module esnext --target es6 --moduleResolution node --outDir ./es",
+    "build:cjs": "tsc --module commonjs --target es5 --outDir ./dist"
+  },
+  "author": "",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.7.2",
+    "pngjs": "^3.3.3"
+  },
+  "devDependencies": {
+    "@jimp/custom": "workspace:^1.0.0",
+    "@types/node": "ts4.7",
+    "@types/web": "^0.0.86",
+    "rimraf": "^2.7.1",
+    "typescript": "~4.7.4",
+    "should": "^13.2.3"
+  }
+}

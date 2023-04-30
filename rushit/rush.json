@@ -341,6 +341,14 @@
       "projectFolder": "libraries/core"
     },
     {
+      "packageName":  "@jimp/custom",
+      "projectFolder": "libraries/custom"
+    },
+    {
+      "packageName":  "@jimp/test-utils",
+      "projectFolder": "libraries/test-utils"
+    },
+    {
       "packageName": "@jimp/plugin-base",
       "projectFolder": "plugins/base"
     },

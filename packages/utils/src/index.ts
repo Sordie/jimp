@@ -1,4 +1,4 @@
-export function isNodePattern(cb) {
+export function isNodePattern(cb: any) {
   if (typeof cb === 'undefined') {
     return false;
   }
@@ -10,7 +10,7 @@ export function isNodePattern(cb) {
   return true;
 }
 
-export function throwError(error, cb) {
+export function throwError(error: string | Error | undefined, cb: { call: (arg0: any, arg1: any) => any; }) {
   if (typeof error === 'string') {
     error = new Error(error);
   }
@@ -22,7 +22,7 @@ export function throwError(error, cb) {
   throw error;
 }
 
-export function scan(image, x, y, w, h, f) {
+export function scan(image: any, x: number, y: number, w: number, h: number, f: (image: any, _x: number, _y: number, idx: number) => void) {
   // round input
   x = Math.round(x);
   y = Math.round(y);
@@ -39,7 +39,7 @@ export function scan(image, x, y, w, h, f) {
   return image;
 }
 
-export function* scanIterator(image, x, y, w, h) {
+export function* scanIterator(image: { bitmap: { width: number; }; }, x: number, y: number, w: number, h: number) {
   // round input
   x = Math.round(x);
   y = Math.round(y);

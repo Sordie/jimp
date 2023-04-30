@@ -8,7 +8,7 @@ importers:
   ../../libraries/core:
     specifiers:
       '@babel/runtime': ^7.7.2
-      '@jimp/test-utils': ~0.16.2
+      '@jimp/test-utils': workspace:^1.0.0
       '@jimp/utils': workspace:^1.0.0
       '@types/node': ts4.7
       '@types/web': ^0.0.86
@@ -28,7 +28,6 @@ importers:
       typescript: ~4.7.4
     dependencies:
       '@babel/runtime': 7.20.7
-      '@jimp/test-utils': 0.16.2
       '@jimp/utils': link:../utils
       any-base: 1.1.0
       buffer: 5.7.1
@@ -40,12 +39,51 @@ importers:
       pixelmatch: 4.0.2
       tinycolor2: 1.5.2
     devDependencies:
+      '@jimp/test-utils': link:../test-utils
       '@types/node': 18.11.18
       '@types/web': 0.0.86
       mocha: 10.2.0
       rimraf: 2.7.1
       should: 13.2.3
       ts-node: 10.9.1_nv75g3i7xuh23du6z7qul3uiqi
+      typescript: 4.7.4
+
+  ../../libraries/custom:
+    specifiers:
+      '@babel/runtime': ^7.7.2
+      '@jimp/core': workspace:^1.0.0
+      '@types/node': ts4.7
+      '@types/web': ^0.0.86
+      rimraf: ^2.7.1
+      typescript: ~4.7.4
+    dependencies:
+      '@babel/runtime': 7.20.7
+      '@jimp/core': link:../core
+    devDependencies:
+      '@types/node': 18.11.18
+      '@types/web': 0.0.86
+      rimraf: 2.7.1
+      typescript: 4.7.4
+
+  ../../libraries/test-utils:
+    specifiers:
+      '@babel/runtime': ^7.7.2
+      '@jimp/custom': workspace:^1.0.0
+      '@types/node': ts4.7
+      '@types/web': ^0.0.86
+      pngjs: ^3.3.3
+      rimraf: ^2.7.1
+      should: ^13.2.3
+      typescript: ~4.7.4
+    dependencies:
+      '@babel/runtime': 7.20.7
+      pngjs: 3.4.0
+    devDependencies:
+      '@jimp/custom': link:../custom
+      '@types/node': 18.11.18
+      '@types/web': 0.0.86
+      rimraf: 2.7.1
+      should: 13.2.3
       typescript: 4.7.4
 
   ../../libraries/utils:
@@ -110,13 +148,6 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
-
-  /@jimp/test-utils/0.16.2:
-    resolution: {integrity: sha512-D00NA4R7bme+DkHQaDPNbHju+h8k38fs43nZnD3iWe70LK57HCR+RXvYV3dia1zuZlp1Ri6c872JMfQHik4sSQ==}
-    dependencies:
-      '@babel/runtime': 7.20.7
-      pngjs: 3.4.0
-    dev: false
 
   /@jridgewell/resolve-uri/3.1.0:
     resolution: {integrity: sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==}

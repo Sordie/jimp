@@ -139,7 +139,7 @@ const emptyBitmap = {
   height: null
 };
 
-interface Jimp {
+export interface Jimp {
   cloneQuiet: ()=>Jimp;
   resize: (a,b)=>Jimp;
 }
@@ -183,7 +183,7 @@ interface Jimp {
  * @param {function(Error, Jimp)} cb (optional) a function to call when the image is parsed to a bitmap
  */
 
-class Jimp extends EventEmitter {
+export class Jimp extends EventEmitter {
   private static __extraConstructors: any[] = [];
 
   /**
@@ -1273,3 +1273,5 @@ if (process.env.ENVIRONMENT === 'BROWSER') {
 export { addType } from './utils/mime';
 
 export default Jimp;
+
+export * from "./types";
